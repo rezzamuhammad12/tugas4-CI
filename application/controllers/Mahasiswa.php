@@ -42,4 +42,12 @@ class Mahasiswa extends CI_Controller {
         redirect('mahasiswa');
     }
 
+    public function detail($id)
+    {
+        $data['judul'] = 'Detail Data Mahasiswa';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/detail');
+        $this->load->view('templates/footer');
+    }
+
 }

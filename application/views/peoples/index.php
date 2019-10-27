@@ -16,7 +16,8 @@
 
 
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md">
+            <h5>Results : <?= $total_rows; ?></h5>
             <table class="table">
                 <thead>
                     <tr>
@@ -27,6 +28,15 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if( empty($peoples)) : ?>
+                    <tr>
+                        <td colspan="4">
+                            <div class="alert alert-danger" role="alert">
+                            data not found!
+                            </div>
+                        </td>
+                    </tr>
+                    <?php endif; ?>
                     <?php foreach($peoples as $people) : ?>
                         <tr>
                             <th><?= ++$start; ?></th>

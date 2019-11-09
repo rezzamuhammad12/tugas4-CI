@@ -11,7 +11,7 @@ class Peoples_model extends CI_Model
     {
         if ($keyword) {
             $this->db->like('name', $keyword);
-            $this->db-or_like('email', $keyword);
+            $this->db->or_like('email', $keyword);
         }
         return $this->db->get('peoples', $limit, $start)->result_array();
     }
